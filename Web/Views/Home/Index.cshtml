@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>用户登录</h1>
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<form>
+    <div class="form-group">
+        <label for="txtUserName">用户名</label>
+        <input type="email" class="form-control" id="txtUserName" placeholder="用户名/邮箱">
+    </div>
+    <div class="form-group">
+        <label for="txtPassword">密码</label>
+        <input type="password" class="form-control" id="txtPassword" placeholder="账号密码">
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox"> 记住密码
+        </label>
+    </div>
+    <button type="button" class="btn btn-primary" id="btnLogin">登      录</button>
+</form>
+
+<script type="text/javascript">
+    var apiUrl = "http://192.168.1.25:443/api/Login/GetJwtStr";
+    $(function () {
+        $("#btnLogin").click(function () {
+            var userName = $("#txtUserName").val();
+            var password = $("#txtPassword").val();
+            if (userName == "") {
+                $("#txtUserName").parent().addClass("has-error");
+                $("#txtUserName").focus();
+                return;
+            } else {
+                $("#txtUserName").parent().removeClass("has-error");
+            }
+            if (password == "") {
+                $("#txtPassword").parent().addClass("has-error");
+                $("#txtPassword").focus();
+                return;
+            }else {
+                $("#txtPassword").parent().removeClass("has-error");
+            }
+            var newUrl = apiUrl + "?name=" + userName + "&pass=" + password;
+            $.ajax({
+                url: apiUrl,
+                type: "get",
+                data: { "name": userName, "pass": password },
+                success: function (data) {
+                    alert(data);
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        });
+
+    });
+</script>

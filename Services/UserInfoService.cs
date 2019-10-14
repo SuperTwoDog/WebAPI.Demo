@@ -23,7 +23,7 @@ namespace Services
         /// <returns></returns>
         public UserInfoModel LogOn(QueryParams param)
         {
-            string sql = "SELECT * FROM TBL_UM_User WHERE IsActive = 1 AND Account=@account AND PasswordHash=@passwordHash";
+            string sql = "SELECT * FROM Sys_UserInfo WHERE IsActive = 1 AND Account=@account AND PasswordHash=@passwordHash";
             List<SugarParameter> paramList = new List<SugarParameter>();
             paramList.Add(new SugarParameter("@account", param.UserName));
             paramList.Add(new SugarParameter("@passwordHash", param.PassWord));
@@ -41,7 +41,7 @@ namespace Services
         /// <returns></returns>
         public List<UserInfoModel> GetUserList()
         {
-            string sql = "select * from TBL_UM_User where account like @account ";
+            string sql = "select * from Sys_UserInfo where account like @account ";
             List<SugarParameter> paramList = new List<SugarParameter>();
             paramList.Add(new SugarParameter("@account", "%wang%"));
             Pagination page = new Pagination();

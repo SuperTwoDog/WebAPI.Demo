@@ -52,6 +52,9 @@
       <HintPath>..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
     <Reference Include="SqlSugar">
       <HintPath>..\packages\sqlSugar.5.0.0.10\lib\SqlSugar.dll</HintPath>
     </Reference>

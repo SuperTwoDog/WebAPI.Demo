@@ -145,10 +145,9 @@ namespace WebAPI.ApiControllers
         /// <summary>
         /// 用户登录
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="pass"></param>
+        /// <param name="model">请求数据</param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpPost]
         [AllowAnonymous]
         [ApiAuthor(Name = "Mr·Tan", Status = DevStatus.Dev, Time = "2019-10-14")]
         public object UserLogin([FromBody]LoginModel model)
@@ -173,7 +172,7 @@ namespace WebAPI.ApiControllers
             }
             else
             {
-                jwtStr = "login fail!!!";
+                jwtStr = "用户名或密码错误！";
             }
             var result = new
             {

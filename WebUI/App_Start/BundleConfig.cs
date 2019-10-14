@@ -22,9 +22,15 @@ namespace WebUI
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/admin").Include(
+                     "~/Scripts/layui/layui.js",
+                     "~/Scripts/okadmin.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css/admin").Include(
+                      "~/Content/Css/okadmin.css"));
         }
     }
 }

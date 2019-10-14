@@ -52,3 +52,21 @@
 /WebUI/obj/Debug
 /WebUI/obj/Release
 
+# 忽略掉IServices项目bin、obj文件夹
+/IServices/bin/Debug
+/IServices/obj/Debug
+/IServices/bin/Release
+/IServices/obj/Release
+
+# 忽略掉Services项目bin、obj文件夹
+/Services/bin/Debug
+/Services/obj/Debug
+/Services/bin/Release
+/Services/obj/Release
+
+# 忽略掉Repository项目bin、obj文件夹
+/Repository/bin/Debug
+/Repository/obj/Debug
+/Repository/bin/Release
+/Repository/obj/Release
+

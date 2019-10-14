@@ -33,9 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.8.0.17\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,12 +60,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AjaxResult.cs" />
+    <Compile Include="DataAccess\DbProviderFactoryHelper.cs" />
+    <Compile Include="DB\DatabaseType.cs" />
     <Compile Include="Enum\ResultType.cs" />
+    <Compile Include="Extention\Extension.List.cs" />
+    <Compile Include="Extention\Extention.DataTable.cs" />
+    <Compile Include="Extention\Extention.IEnumerable.cs" />
+    <Compile Include="Extention\Extention.Object.cs" />
+    <Compile Include="Extention\Extention.String.cs" />
+    <Compile Include="GlobalSwitch.cs" />
+    <Compile Include="Helper\EmitHelper.cs" />
     <Compile Include="Helper\ConfigHelper.cs" />
+    <Compile Include="Helper\IocHelper.cs" />
     <Compile Include="Helper\MD5Helper.cs" />
     <Compile Include="Helper\UtilConvert.cs" />
+    <Compile Include="Model\LoggerType.cs" />
+    <Compile Include="Model\PageModel.cs" />
+    <Compile Include="Model\Pagination.cs" />
+    <Compile Include="Model\QueryParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

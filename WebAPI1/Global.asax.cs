@@ -1,3 +1,4 @@
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace WebAPI1
     {
         protected void Application_Start()
         {
+            AutofacExt.InitAutofac();
+
             AreaRegistration.RegisterAllAreas();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

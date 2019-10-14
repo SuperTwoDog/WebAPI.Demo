@@ -87,7 +87,8 @@
                     type: "post",
                     data: submitData,
                     success: function (data) {
-                        okLayer.msg.greenTick("响应消息：" + data.resultdata);
+                        var jsonData = JSON.parse(data);
+                        okLayer.msg.greenTick("响应消息：" + jsonData.resultdata);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         //alert(XMLHttpRequest.status);

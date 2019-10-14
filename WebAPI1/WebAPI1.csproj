@@ -47,7 +47,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SqlSugar">
+      <HintPath>..\packages\sqlSugar.5.0.0.10\lib\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="Swashbuckle.Core">
       <HintPath>..\Lib\Swashbuckle.Core.dll</HintPath>
     </Reference>
@@ -185,6 +192,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Config\system.config" />
+    <Content Include="Config\database.config" />
     <None Include="packages.config" />
     <Content Include="Views\Error\Error404.cshtml" />
     <Content Include="Views\Error\Error500.cshtml" />
@@ -198,6 +206,10 @@
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{253a05e0-2a9e-41c3-8850-ba8c85cee833}</Project>
       <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{1087d16f-1fcf-431e-9aac-f63c2a388be7}</Project>
+      <Name>Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Token\Token.csproj">
       <Project>{63b90c13-a3dc-46e2-b378-4bc748f29082}</Project>

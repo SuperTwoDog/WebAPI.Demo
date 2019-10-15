@@ -99,7 +99,7 @@ namespace Token
                 {
                     result = new TokenModel
                     {
-                        Uid = (jwtToken.Id).ObjToInt(),
+                        Uid = jwtToken.Id,
                         Roles = role != null ? UtilConvert.StringToList(role.ToString()) : null,
                         Users = user != null ? UtilConvert.StringToList(user.ToString()) : null,
                     };

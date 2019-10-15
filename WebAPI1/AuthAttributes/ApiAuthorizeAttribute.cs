@@ -33,7 +33,16 @@ namespace WebAPI.AuthAttributes
                             //判断是否指定角色访问
                             if (!string.IsNullOrEmpty(roles))
                             {
-                                if (!token.Roles.Exists(x => x == roles.ToLower()))
+                                string[] rolesArray = roles.ToLower().Split(',');
+                                bool isRool = false;
+                                foreach (var item in rolesArray)
+                                {
+                                    if (token.Roles.Exists(x => x == item))
+                                    {
+                                        isRool = true;
+                                    }
+                                }
+                                if (!isRool)
                                 {
                                     return false;
                                 }
@@ -41,7 +50,16 @@ namespace WebAPI.AuthAttributes
                             //判断是否指定用户访问
                             if (!string.IsNullOrEmpty(users))
                             {
-                                if (!token.Users.Exists(x => x == users.ToLower()))
+                                string[] usersArray = users.ToLower().Split(',');
+                                bool isUser = false;
+                                foreach (var item in usersArray)
+                                {
+                                    if (token.Users.Exists(x => x == item))
+                                    {
+                                        isUser = true;
+                                    }
+                                }
+                                if (!isUser)
                                 {
                                     return false;
                                 }

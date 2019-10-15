@@ -14,7 +14,7 @@ namespace Token.Model
         /// <summary>
         /// Id
         /// </summary>
-        public long Uid { get; set; }
+        public string Uid { get; set; }
         /// <summary>
         /// 角色
         /// </summary>

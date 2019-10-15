@@ -20,7 +20,7 @@ namespace WebUI.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Main()
         {
             ViewBag.Message = "Your contact page.";
 

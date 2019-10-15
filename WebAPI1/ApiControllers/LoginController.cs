@@ -89,7 +89,7 @@ namespace WebAPI.ApiControllers
             if (name == "admin" && pass == "123456")
             {
                 TokenModel tokenModel = new TokenModel();
-                tokenModel.Uid = 1;
+                tokenModel.Uid = "1";
                 tokenModel.Roles = UtilConvert.StringToList("admin");
                 tokenModel.Users= UtilConvert.StringToList(name);
                 tokenModel.ExpiryDateTime = DateTime.Now.AddMinutes((Convert.ToDouble(ConfigHelper.GetValue("EffectiveMin"))));
@@ -155,15 +155,16 @@ namespace WebAPI.ApiControllers
             string jwtStr = string.Empty;
             bool suc = false;
             //这里就是用户登录以后，通过数据库去调取数据，分配权限的操作
+            string passWordHash = Common.Helper.MD5Helper.GetMD5(model.Password);
             QueryParams param = new QueryParams();
             param.UserName = model.Account;
-            param.PassWord = model.Password;
+            param.PassWord = passWordHash;
             UserInfoModel user = userService.LogOn(param);
             if (user!=null && !string.IsNullOrEmpty(user.RoleID))
             {
                 RoleModel role = roleService.QueryById(user.RoleID);
                 TokenModel tokenModel = new TokenModel();
-                tokenModel.Uid = Convert.ToInt32(DateTime.Now.ToString("yyyyMMddHHssmm"));
+                tokenModel.Uid = DateTime.Now.ToString("yyyyMMddHHssmm");
                 tokenModel.Roles = UtilConvert.StringToList(role == null ? "Common" : role.RoleName);
                 tokenModel.Users = UtilConvert.StringToList(user.Account);
                 tokenModel.ExpiryDateTime = DateTime.Now.AddMinutes((Convert.ToDouble(ConfigHelper.GetValue("EffectiveMin"))));
@@ -189,7 +190,7 @@ namespace WebAPI.ApiControllers
         /// <returns></returns>
         [HttpPost]
         [ApiAuthor(Name = "Mr·Tan", Status = DevStatus.Finish, Time = "2019-10-14")]
-        [ApiAuthorize(Roles = "Admin,系统管理员,Common")]
+        [ApiAuthorize(Roles = "Admin,超级管理员,Common,业务员")]
         public dynamic GetUserList(int pageIndex, int pageSize)
         {
             Pagination page = new Pagination()
@@ -208,7 +209,7 @@ namespace WebAPI.ApiControllers
         /// <returns></returns>
         [HttpPost]
         [ApiAuthor(Name = "Mr·Tan", Status = DevStatus.Finish, Time = "2019-10-14")]
-        [ApiAuthorize(Roles = "系统管理员")]
+        [ApiAuthorize(Roles = "超级管理员")]
         public dynamic GetUserInfoByID(string userID)
         {
             UserInfoModel user = userService.QueryById(userID);

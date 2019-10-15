@@ -69,5 +69,18 @@ namespace Common.Helper
             return Convert.ToBase64String(s);
         }
 
+        /// <summary>
+        /// 获取字符串MD5加密串
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string GetMD5(string text)
+        {
+            byte[] result = Encoding.Default.GetBytes(text);
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] output = md5.ComputeHash(result);
+            return BitConverter.ToString(output).Replace("-", "");
+        }
+
     }
 }

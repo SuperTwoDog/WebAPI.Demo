@@ -81,7 +81,7 @@
                 for (var i = 0; i < strdata.length; i++) {
                     submitData[strdata[i].name] = strdata[i]['value'];
                 }
-                var url = "http://192.168.1.5:2000/api/Login/CheckLogin1";
+                var url = "http://192.168.1.25:2000/api/Login/UserLogin";
                 $.ajax({
                     url: url,
                     type: "post",
@@ -89,10 +89,14 @@
                     success: function (data) {
                         var jsonData = JSON.parse(data);
                         //okLayer.msg.greenTick("响应消息：" + jsonData.resultdata);
-                        if (jsonData.message == "操作成功") {
+                        var result = JSON.parse(jsonData.resultdata);
+                        //okLayer.msg.greenTick("响应消息1：" + b);
+                        if (result.data.success == true) {
                             okLayer.msg.greenTick("登录成功，正在跳转页面！");
                             var homeUrl = "/Home";
                             setTimeout("location.href = '" + homeUrl + "'", 500);
+                        } else {
+                            okLayer.msg.redCry(result.data.token);
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {

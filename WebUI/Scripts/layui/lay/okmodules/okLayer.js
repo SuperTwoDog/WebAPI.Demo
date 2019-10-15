@@ -45,6 +45,11 @@ layui.define(["layer"], function (exports) {
                 var options = {icon: 1, time: okLayer.msg.time, anim: okLayer.animChoose()};
                 layer.msg(content, options, callbackFunction);
             },
+            // 绿色勾1
+            greenTickEx: function (content, callbackFunction) {
+                var options = { icon: 1, time: okLayer.msg.time, anim: 0 };
+                layer.msg(content, options, callbackFunction);
+            },
             // 红色叉
             redCross: function (content, callbackFunction) {
                 var options = {icon: 2, time: okLayer.msg.time, anim: okLayer.animChoose()};

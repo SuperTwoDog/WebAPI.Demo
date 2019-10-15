@@ -18,15 +18,15 @@
             <div class="login_face"><img src="@Url.Content("~/Content/Images/System/logo.png")"></div>
             <div class="layui-form-item input-item">
                 <label for="username">用户名</label>
-                <input type="text" lay-verify="required" name="Account" placeholder="请输入账号" autocomplete="off" id="username" class="layui-input">
+                <input type="text" lay-verify="required" name="Account" placeholder="请输入账号" autocomplete="off" id="username" value="admin" class="layui-input">
             </div>
             <div class="layui-form-item input-item">
                 <label for="password">密码</label>
-                <input type="password" lay-verify="required|password" name="Password" placeholder="请输入密码" autocomplete="off" id="password" class="layui-input">
+                <input type="password" lay-verify="required|password" name="Password" placeholder="请输入密码" autocomplete="off" id="password" value="123456" class="layui-input">
             </div>
             <div class="layui-form-item input-item captcha-box">
                 <label for="captcha">验证码</label>
-                <input type="text" lay-verify="required|captcha" name="captcha" placeholder="请输入验证码" autocomplete="off" id="captcha" maxlength="4" class="layui-input">
+                <input type="text" lay-verify="required|captcha" name="captcha" placeholder="请输入验证码" autocomplete="off" value="test" id="captcha" maxlength="4" class="layui-input">
                 <div class="img ok-none-select" id="captchaImg"></div>
             </div>
             <div class="layui-form-item">
@@ -62,7 +62,7 @@
                 password: [/^[\S]{6,12}$/, "密码必须6到12位，且不能出现空格"],
                 captcha: function (val) {
                     if (verifyCode.validate(val) != "true") {
-                        return verifyCode.validate(val)
+                        //return verifyCode.validate(val)
                     }
                 }
             });
@@ -81,7 +81,7 @@
                 for (var i = 0; i < strdata.length; i++) {
                     submitData[strdata[i].name] = strdata[i]['value'];
                 }
-                var url = "http://192.168.1.25:2000/api/Login/UserLogin";
+                var url = "http://192.168.1.5:2000/api/Login/UserLogin";
                 $.ajax({
                     url: url,
                     type: "post",
@@ -92,7 +92,7 @@
                         var result = JSON.parse(jsonData.resultdata);
                         //okLayer.msg.greenTick("响应消息1：" + b);
                         if (result.data.success == true) {
-                            okLayer.msg.greenTick("登录成功，正在跳转页面！");
+                            okLayer.msg.greenTickEx("登录成功，正在跳转页面！");
                             var homeUrl = "/Home";
                             setTimeout("location.href = '" + homeUrl + "'", 500);
                         } else {

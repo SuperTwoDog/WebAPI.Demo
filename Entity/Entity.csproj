@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MaterielModel.cs" />
+    <Compile Include="Models\MenuInfoModel.cs" />
     <Compile Include="Models\ProTaskBillsModel.cs" />
     <Compile Include="Models\RoleModel.cs" />
     <Compile Include="Models\UserInfoModel.cs" />

@@ -143,6 +143,7 @@
     <Content Include="Content\Images\System\login-bg.jpeg" />
     <Content Include="Content\Images\System\login-bg1.jpg" />
     <Content Include="Content\Images\System\logo.png" />
+    <Content Include="Content\Images\User\admin.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\demo.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

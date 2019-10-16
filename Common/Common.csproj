@@ -73,11 +73,13 @@
     <Compile Include="Helper\ConfigHelper.cs" />
     <Compile Include="Helper\IocHelper.cs" />
     <Compile Include="Helper\MD5Helper.cs" />
+    <Compile Include="Helper\TreeHelper.cs" />
     <Compile Include="Helper\UtilConvert.cs" />
     <Compile Include="Model\LoggerType.cs" />
     <Compile Include="Model\PageModel.cs" />
     <Compile Include="Model\Pagination.cs" />
     <Compile Include="Model\QueryParams.cs" />
+    <Compile Include="Model\TreeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -68,7 +68,7 @@ namespace WebAPI.ApiControllers
             if (name == "admin" && pass == "123456")
             {
                 TokenModel tokenModel = new TokenModel();
-                tokenModel.Uid = 1;
+                tokenModel.Uid = "1";
                 tokenModel.Roles = UtilConvert.StringToList("admin");
                 tokenModel.Users= UtilConvert.StringToList(name);
                 tokenModel.ExpiryDateTime = DateTime.Now.AddMinutes((Convert.ToDouble(ConfigHelper.GetValue("EffectiveMin"))));

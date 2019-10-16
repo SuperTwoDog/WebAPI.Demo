@@ -35,6 +35,7 @@ namespace WebAPI
 
                     vc.Version("Bms", "基础资料 API").Description("基础数据");
                     vc.Version("Mes", "生产管理 API").Description("生产管理");
+                    vc.Version("System", "系统管理 API").Description("系统管理");
                 });
 
                 //增加token至请求头部

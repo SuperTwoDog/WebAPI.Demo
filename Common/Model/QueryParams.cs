@@ -125,5 +125,15 @@ namespace Common.Model
         /// 单位名称
         /// </summary>
         public string CompanyName { get; set; }
+
+        /// <summary>
+        /// 页数
+        /// </summary>
+        public int PageIndex { get; set; }
+
+        /// <summary>
+        /// 每页条数
+        /// </summary>
+        public int PageSize { get; set; }
     }
 }

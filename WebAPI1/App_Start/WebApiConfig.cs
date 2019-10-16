@@ -56,7 +56,13 @@ namespace WebAPI
                 defaults: new { action = RouteParameter.Optional, id = RouteParameter.Optional, namespaces = new string[] { "WebAPI.ApiControllers" } }
             );
 
-            
+            config.Routes.MapHttpRoute(
+                name: "SystemApi",
+                routeTemplate: "api/System/{controller}/{action}/{id}",
+                defaults: new { action = RouteParameter.Optional, id = RouteParameter.Optional, namespaces = new string[] { "WebAPI.Areas.System.Controllers" } }
+            );
+
+
 
 
             //config.MapHttpAttributeRoutes();

@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BASE\IBaseServices.cs" />
+    <Compile Include="IMenuInfoService.cs" />
     <Compile Include="IRoleService.cs" />
     <Compile Include="IUserInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

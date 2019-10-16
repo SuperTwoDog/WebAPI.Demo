@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="AutofacExt.cs" />
     <Compile Include="BASE\BaseServices.cs" />
+    <Compile Include="MenuInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleService.cs" />
     <Compile Include="UserInfoService.cs" />

@@ -11,12 +11,12 @@ using System.Net.Http;
 using System.Web.Http;
 using WebAPI.AuthAttributes;
 
-namespace WebAPI1.Areas.System.Controllers
+namespace WebAPI.Areas.System.Controllers
 {
     /// <summary>
-    /// 系统管理API控制器
+    /// 系统基础信息管理API控制器
     /// </summary>
-    public class SystemController : ApiController
+    public class SysBaseController : ApiController
     {
         #region 数据访问接口
         public UserInfoService userService { get; set; }

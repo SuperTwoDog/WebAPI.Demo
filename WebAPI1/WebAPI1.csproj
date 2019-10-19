@@ -165,7 +165,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Bms\Controllers\ProductController.cs" />
     <Compile Include="Areas\Mes\Controllers\MTaskController.cs" />
-    <Compile Include="Areas\System\Controllers\SystemController.cs" />
+    <Compile Include="Areas\System\Controllers\SysBaseController.cs" />
     <Compile Include="AuthAttributes\ApiAuthorizeAttribute.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
